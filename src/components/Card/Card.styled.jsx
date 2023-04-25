@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const StyledCardUl = styled.ul`
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
-padding: 0 16px;`
-
 export const SlyledCardLi = styled.li`
 position: relative;
 display: flex;
@@ -35,7 +28,6 @@ margin-left: 0;
 margin-top: 0;
 margin-right: 0;
 margin-button: 8px;
-
 color: #EBD8FF;`  
 
 export const StyledButton = styled.button`
@@ -49,7 +41,6 @@ gap: 6px;
 width: 196px;
 height: 50px;
 margin-top: 18px;
-
 background: #EBD8FF;
 box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
 border-radius: 10.3108px;
@@ -60,7 +51,6 @@ font-size: 18px;
 line-height: 22px;
 color: #373737;
 &.active {
-   background: #5CD3A8;
    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
    border-radius: 10.3108px;
   }`
@@ -68,11 +58,9 @@ color: #373737;
 export const StyledImg = styled.img`
 position: absolute;
 top: 190px;
-// margin: 0 0 18px 0;
 border-radius: 50%;
 border: 8px solid #EBD8FF;
-box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), inset 0px -2.19582px 4.39163px #AE7BE3, inset 0px 4.39163px 3.29372px #FBF8FF;
-`  
+box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), inset 0px -2.19582px 4.39163px #AE7BE3, inset 0px 4.39163px 3.29372px #FBF8FF;`  
 export const Logo = styled.img`
 position: absolute;
 top: 20px;

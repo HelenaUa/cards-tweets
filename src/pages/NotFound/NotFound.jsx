@@ -1,5 +1,6 @@
 import { NotFoundTitle, BackLink } from './NotFound.styled';
 
+
 export default function NotFound() {
     return (
         <div>
@@ -7,4 +8,4 @@ export default function NotFound() {
             <NotFoundTitle>Page not found</NotFoundTitle>
         </div>
     )
-}
+};

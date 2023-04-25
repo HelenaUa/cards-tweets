@@ -1,54 +1,58 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Card } from "components/Card/Card";
-// import { ListStyled } from "./Tweets.styled";
-import { ButtonLoadMore } from "./Tweets.styled";
-import { NavLink, useLocation } from 'react-router-dom';
+import { ButtonBack, StyledTweetsUl, ButtonLoadMore } from "./Tweets.styled";
+import { useLocation } from 'react-router-dom';
 
 
 const Tweets = () => {
 
   const [users, setUsers] = useState([]);
+  const [limit, setLimit] = useState(3);
+  const [buttonVisible, setbuttonVisible] = useState(false);
+
   const location = useLocation();
   const goBackLink = location?.state?.from ?? "/";
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [limit, setLimit] = useState(3);
-  const [page, setPage] = useState(1);
-  // const [buttonVisible, setbuttonVisible] = useState(false);
-
-  async function fetchTweets(page) {
-    console.log(page);
+  
+  async function fetchTweets() {
     try {
-      const response = await axios.get(`https://642fd9e6b289b1dec4bb7aed.mockapi.io/users?page=${page}&limit=3`);
-      const newTweets = response.data;
-        setUsers(prevTweets => [...prevTweets, ...newTweets]); 
+      const response = await axios.get(`https://642fd9e6b289b1dec4bb7aed.mockapi.io/users?page=1&limit=${limit}`);
+      setUsers(response.data);
+      setbuttonVisible(true);
+      if (limit === 15) {
+        setbuttonVisible(false);
+      }
     } catch (error) {
     console.log(error);
     }
   };
-  
-  const LoadMore = () => {
-        setPage(prevPage => prevPage + 1);
-    }
-  // const LoadMore = () => {
-  //   setCurrentPage((prevPage) => prevPage + 1); 
-  // };  
-      
 
+  const LoadMore = () => {
+    setLimit(limit + 3);
+  };
+  
   useEffect(() => {
-    fetchTweets(page);
+    fetchTweets(limit);
      // eslint-disable-next-line
-  }, [page]);
+  }, [limit]);
 
     return (
-        <div>
-            <NavLink to={goBackLink}>Back</NavLink>
-        {/* <ListStyled> */}
-          <Card users={users}/>
-            {/* </ListStyled>    */}
-            <ButtonLoadMore type="button" onClick={LoadMore}>Load More</ButtonLoadMore>
+      <div>
+        <ButtonBack to={goBackLink}>Back</ButtonBack> 
+        <StyledTweetsUl>
+          {users.map(user =>
+                (<Card key={user.id}
+                        id={user.id}
+                        name={user.user}
+                        avatar={user.avatar}
+                        tweets={user.tweets}
+                        followers={user.followers}
+                        isFollowing={user.isFollowing}>
+                </Card>)
+          )}
+        </StyledTweetsUl>
+        {buttonVisible && <ButtonLoadMore type="button" onClick={LoadMore}>Load More</ButtonLoadMore>}
       </div>
-  
   )
 };
 

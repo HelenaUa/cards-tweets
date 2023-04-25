@@ -1,13 +1,29 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-// export const ListStyled = styled.ul`
-// margin: 0 auto;
-// padding: 25px;
-// display: flex;
-// justify-content: center;
-// flex-wrap: wrap;
-// gap:10px;
-// list-style: none;`
+export const ButtonBack = styled(NavLink)`
+display: flex;
+text-decoration: none;
+border: solid 1px black;
+border-radius: 4px;
+color: #373737;
+background: #EBD8FF;
+font-weight: 500;
+width: 76px;
+height: 34px;
+justify-content: center;
+align-items: center;
+  :hover {
+    color: white;
+    background: #5736A3;
+    }`
+
+export const StyledTweetsUl = styled.ul`
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+padding: 0 16px;`    
 
 export const ButtonLoadMore = styled.button`
 display: flex;
