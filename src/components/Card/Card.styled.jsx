@@ -50,9 +50,10 @@ font-weight: 600;
 font-size: 18px;
 line-height: 22px;
 color: #373737;
-&.active {
-   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-   border-radius: 10.3108px;
+cursor: pointer;
+  &:hover {
+    color: #ebd8ff;
+    background-color: #5cd3a8;
   }`
 
 export const StyledImg = styled.img`

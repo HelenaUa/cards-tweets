@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
-import { Layout } from './Layout/Layout';
+import { Layout } from 'components/Layout/Layout';
 
-const Home = lazy(() => import('../pages/Home/Home'));
-const Tweets = lazy(() => import('../pages/Tweets/Tweets'));
-const NotFound = lazy(() => import('../pages/NotFound/NotFound'))
+const Home = lazy(() => import('pages/Home/Home'));
+const Tweets = lazy(() => import('pages/Tweets/Tweets'));
+const NotFound = lazy(() => import('pages/NotFound/NotFound'))
 
 
 export const App = () => {
@@ -23,6 +23,3 @@ export const App = () => {
     </div>
   );
 };
-
-
-
