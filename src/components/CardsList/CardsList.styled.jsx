@@ -6,4 +6,4 @@ flex-wrap: wrap;
 justify-content: center;
 gap: 20px;
 padding: 0 16px;
-min-height: calc(100vw - 91px)`
+min-width: calc(100vw - 91px)`
