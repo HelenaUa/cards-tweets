@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Card } from "components/Card/Card";
-import { ButtonBack, StyledTweetsUl, ButtonLoadMore } from "./Tweets.styled";
+import { CardsList } from "components/CardsList/CardsList";
+import { ButtonBack, ButtonLoadMore } from "./Tweets.styled";
 import { useLocation } from 'react-router-dom';
 
 
@@ -39,18 +39,9 @@ const Tweets = () => {
     return (
       <div>
         <ButtonBack to={goBackLink}>Back</ButtonBack> 
-        <StyledTweetsUl>
-          {users.map(user =>
-                (<Card key={user.id}
-                        id={user.id}
-                        name={user.user}
-                        avatar={user.avatar}
-                        tweets={user.tweets}
-                        followers={user.followers}
-                        isFollowing={user.isFollowing}>
-                </Card>)
-          )}
-        </StyledTweetsUl>
+
+        <CardsList users={users} />
+       
         {buttonVisible && <ButtonLoadMore type="button" onClick={LoadMore}>Load More</ButtonLoadMore>}
       </div>
   )
