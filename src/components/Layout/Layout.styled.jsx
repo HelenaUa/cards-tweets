@@ -17,6 +17,9 @@ border-bottom: 1px solid black;
     display: flex;
   }`
 
+export const StyledMain = styled.main`
+min-height: calc(100vh - 91px)`  
+
 export const StyledNav = styled.nav`
 display: flex;
 flex-direction: row;

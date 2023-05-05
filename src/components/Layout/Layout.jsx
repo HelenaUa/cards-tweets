@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container, StyledHeader, StyledNav, StyledLink } from './Layout.styled';
+import { Container, StyledHeader, StyledNav, StyledLink, StyledMain } from './Layout.styled';
 import { Loader } from 'components/Loader/Loader';
 
 
@@ -15,11 +15,11 @@ export const Layout = () => {
                 </StyledNav> 
             </StyledHeader>
             
-            <main>
+            <StyledMain>
                 <Suspense fallback={<Loader />}>
                     <Outlet />
                 </Suspense>
-            </main>
+            </StyledMain>
 
         </Container>
     )
