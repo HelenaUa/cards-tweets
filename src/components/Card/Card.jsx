@@ -2,7 +2,6 @@ import { SlyledCardLi, StyledText, StyledButton, StyledImg, Logo, Picture, Line 
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import logo from '../../image/Logo.png';
-import picture from '../../image/picture.png';
 import axios from 'axios';
 
 
@@ -28,11 +27,11 @@ export const Card = ({ id, name, avatar, tweets, followers, isFollowing }) => {
     <SlyledCardLi key={id} id={id}>
 
       <Logo src={logo} alt='logo'/>
-      <Picture src={picture} alt='picture'/>
-      <Line></Line>
+      <Picture />
+      <Line>
+        <StyledImg src={avatar} width={80} height={80} alt={name}/>
+      </Line>
 
-      <StyledImg src={avatar} width={80} alt={name}/>
-      
       <StyledText>{tweets} tweets</StyledText>
       <StyledText>{follower.toLocaleString('en-US', { maximumFractionDigits: 0 })} followers</StyledText>
       

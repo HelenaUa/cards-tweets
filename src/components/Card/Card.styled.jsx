@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import picture from "../../image/picture.png";
 
 export const SlyledCardLi = styled.li`
 position: relative;
@@ -51,33 +52,50 @@ font-size: 18px;
 line-height: 22px;
 color: #373737;
 cursor: pointer;
-  &:hover {
-    color: #ebd8ff;
-    background-color: #5cd3a8;
+transition: scale 300ms;
+  &:hover,
+  :focus {
+    scale: 1.04;
+  };
+   &:active {
+    scale: 0.96;
   }`
-
-export const StyledImg = styled.img`
-position: absolute;
-top: 190px;
-border-radius: 50%;
-border: 8px solid #EBD8FF;
-box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), inset 0px -2.19582px 4.39163px #AE7BE3, inset 0px 4.39163px 3.29372px #FBF8FF;`  
 
 export const Logo = styled.img`
 position: absolute;
 top: 20px;
 left: 20px;`
 
-export const Picture = styled.img`
-position: absolute;
-padding: 0 36px;
-top: 28px;`
+export const Picture = styled.div`
+margin-bottom: 88px;
+width: 308px;
+height: 168px;
+background-image: url('${picture}');
+background-size: cover;`
 
 export const Line = styled.div`
 position: absolute;
-height: 8px;
-width: 380px;
-top: 235px;
-background: #ebd8ff;
-box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
-  inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;`
+width: 80px;
+height: 80px;
+top: 195px;
+left: 150px;
+
+&::before {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 8px;
+    top: 40px;
+    left: -150px;
+    background-color: #ebd8ff;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
+      inset 0px -1.71846px 3.43693px #ae7be3,
+      inset 0px 3.43693px 2.5777px #fbf8ff;
+  }`
+
+export const StyledImg = styled.img`
+position: absolute;
+top: -3px;
+border-radius: 50%;
+border: 8px solid #EBD8FF;
+box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), inset 0px -2.19582px 4.39163px #AE7BE3, inset 0px 4.39163px 3.29372px #FBF8FF;`  
