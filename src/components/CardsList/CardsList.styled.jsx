@@ -5,4 +5,5 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 gap: 20px;
-padding: 0 16px;`
+padding: 0 16px;
+min-height: calc(100vh - 91px)`
